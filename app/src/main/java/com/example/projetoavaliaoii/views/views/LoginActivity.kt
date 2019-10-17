@@ -11,14 +11,28 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
+    lateinit var senha: String
+    lateinit var email: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+    }
 
+    override fun onStart() {
+        super.onStart()
+
+        val pref = getSharedPreferences("configuracoes", 0)
+        senha = pref.getString("senha", "").toString()
+        email = pref.getString("email", "").toString()
+
+
+        edtSenhaLogin.setText(pref.getString("senha", ""))
+        edtEmailLogin.setText(pref.getString("email", ""))
     }
 
     fun cadastrar(view: View){
-        var intent = Intent(applicationContext, CadastroActivity::class.java)
+        var intent = Intent(applicationContext, CadastroActivity::class.java) //TODO appContext mesmo?
         startActivity(intent)
     }
 
@@ -26,14 +40,14 @@ class LoginActivity : AppCompatActivity() {
         val edtSenha = findViewById<EditText>(R.id.edtSenhaLogin)
         val edtEmail = findViewById<EditText>(R.id.edtEmailLogin)
 
-        val admin = "admin" //TODO temporario
-
-        if(edtSenha.text.toString().equals(admin) && edtEmail.text.toString().equals(admin)){ //&& edtEmail.text.equals(admin)
+        if(edtSenha.text.toString().equals(senha) && edtEmail.text.toString().equals(email)){
             var intent = Intent(applicationContext, ListActivity::class.java)
             startActivity(intent)
         } else {
             Toast.makeText(this, "Credenciais incorretas", Toast.LENGTH_LONG).show()
         }
+
+//        finish() //TODO botao sair no menu de ListActivity chama essa activity
     }
 
 }

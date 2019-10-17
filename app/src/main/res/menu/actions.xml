@@ -11,7 +11,7 @@
         android:id="@+id/action_concluida"
         android:icon="@android:drawable/ic_popup_sync"
         android:title="Concluir Tarefas"
-        app:showAsAction="never" />
+        app:showAsAction="always|never" />
     <item
         android:id="@+id/action_sair"
         android:icon="@android:drawable/ic_lock_power_off"
