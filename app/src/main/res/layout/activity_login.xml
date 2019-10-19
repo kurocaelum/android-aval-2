@@ -17,18 +17,18 @@
         app:srcCompat="@drawable/imd" />
 
     <EditText
+        android:id="@+id/edtEmailLogin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="E-mail"
+        />
+
+    <EditText
         android:id="@+id/edtSenhaLogin"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
 
         android:hint="Senha"
-        />
-
-    <EditText
-        android:id="@+id/edtEmailLogin"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="E-mail"
         />
 
     <Button

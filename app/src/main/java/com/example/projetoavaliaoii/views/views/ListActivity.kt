@@ -34,7 +34,7 @@ class ListActivity : AppCompatActivity() {
             Toast.makeText(this,"Concluída", Toast.LENGTH_SHORT).show()
             return true
         }else if (id == R.id.action_sair){
-            Toast.makeText(this,"Sair", Toast.LENGTH_SHORT).show()
+            logout(item)
             return true
         }else {
             return super.onOptionsItemSelected(item)
@@ -45,6 +45,10 @@ class ListActivity : AppCompatActivity() {
 
     fun cadastrarTarefa(item: MenuItem?){
         startActivity(Intent(this, CadastraTarefaActivity::class.java))
+    }
+
+    fun logout(item: MenuItem?){
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
 }

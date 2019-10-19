@@ -21,7 +21,7 @@ class CadastraTarefaActivity : AppCompatActivity() {
     }
 
     fun cadastrarTarefa(){
-//        Toast.makeText(this, "Teste", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Teste 2", Toast.LENGTH_SHORT).show()
     }
 
 }

@@ -24,17 +24,17 @@
         />
 
     <EditText
-        android:id="@+id/edtSenhaCad"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="Senha"
-        />
-
-    <EditText
         android:id="@+id/edtEmailCad"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="E-mail"
+        />
+
+    <EditText
+        android:id="@+id/edtSenhaCad"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Senha"
         />
 
     <Button

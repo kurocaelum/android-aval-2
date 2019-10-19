@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "Credenciais incorretas", Toast.LENGTH_LONG).show()
         }
 
-//        finish() //TODO botao sair no menu de ListActivity chama essa activity
+        finish()
     }
 
 }
