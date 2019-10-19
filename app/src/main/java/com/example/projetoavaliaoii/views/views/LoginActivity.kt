@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun cadastrar(view: View){
-        var intent = Intent(applicationContext, CadastroActivity::class.java) //TODO appContext mesmo?
+        var intent = Intent(applicationContext, CadastroActivity::class.java)
         startActivity(intent)
     }
 
