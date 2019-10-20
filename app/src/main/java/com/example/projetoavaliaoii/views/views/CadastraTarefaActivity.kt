@@ -50,7 +50,7 @@ class CadastraTarefaActivity : AppCompatActivity() {
         tarefa = Tarefa(concluida, titulo, descricao)
         tarefaRepository?.save(tarefa!!)
 
-        Toast.makeText(this, "Tarefa salva com ID ${tarefa?.id}", Toast.LENGTH_LONG).show()
+        NotificationUtils.notificationTarefa(this)
 
         finish()
     }
