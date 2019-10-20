@@ -2,6 +2,7 @@ package com.example.projetoavaliaoii.views.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import com.example.projetoavaliaoii.R
@@ -35,14 +36,24 @@ class CadastraTarefaActivity : AppCompatActivity() {
         }
 
         btnCadastrarTarefa.setOnClickListener {
-//            cadastrarTarefa() // TODO salvar no SQLite
+            cadastrarTarefa()
         }
     }
 
-    fun cadastrarTarefa(concluida: Int, titulo: String, descricao: String){
-        Toast.makeText(this, "Botão cadastrar", Toast.LENGTH_SHORT).show()
+    fun cadastrarTarefa(){
+        var titulo: String = edtTituloTarefa?.text.toString()
+        var descricao: String = edtDescricaoTarefa?.text.toString()
 
+        salvarTarefa(0, titulo, descricao)
+    }
 
+    fun salvarTarefa(concluida: Int, titulo: String, descricao: String){
+        tarefa = Tarefa(concluida, titulo, descricao)
+        tarefaRepository?.save(tarefa!!)
+
+        Toast.makeText(this, "Tarefa salva com ID ${tarefa?.id}", Toast.LENGTH_LONG).show()
+
+        finish()
     }
 
 }
