@@ -41,7 +41,7 @@ object NotificationUtils {
 
         val notificationBuilder =
             NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_favorite) //TODO criar icone
+                .setSmallIcon(R.drawable.ic_favorite)
                 .setContentTitle("Titulo") //TODO pegar do banco
                 .setContentText("Texto") //TODO pegar do banco
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
