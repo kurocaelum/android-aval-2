@@ -27,7 +27,6 @@ class TarefaAdapter(
     }
 
     class VH(itemView: View): RecyclerView.ViewHolder(itemView) {
-//        val id = itemView.txtId //TODO
         val titulo = itemView.txtTitulo
         val descricao = itemView.txtDescricao
     }

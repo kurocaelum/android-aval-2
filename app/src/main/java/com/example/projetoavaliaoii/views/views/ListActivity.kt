@@ -13,8 +13,7 @@ import com.example.projetoavaliaoii.views.model.Tarefa
 import kotlinx.android.synthetic.main.activity_list.*
 
 class ListActivity : AppCompatActivity() {
-//    private var tarefas = mutableListOf<Tarefa>()
-    private var tarefas = testeTarefas()
+    private var tarefas: MutableList<Tarefa> = listaTarefas()
     private var adapter = TarefaAdapter(tarefas)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,8 +29,9 @@ class ListActivity : AppCompatActivity() {
         rvTarefas.layoutManager = layoutManager
     }
 
-    fun testeTarefas(): List<Tarefa> {
-        return listOf(
+    //TODO pegar do banco
+    fun listaTarefas(): MutableList<Tarefa> {
+        return mutableListOf(
             Tarefa(0, "t1", "d1"),
             Tarefa(0, "t2", "d2"),
             Tarefa(0, "t3", "d3")
