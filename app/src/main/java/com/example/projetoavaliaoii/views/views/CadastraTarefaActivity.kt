@@ -40,8 +40,8 @@ class CadastraTarefaActivity : AppCompatActivity() {
     }
 
     fun cadastrarTarefa(){
-        var titulo: String = edtTituloTarefa?.text.toString()
-        var descricao: String = edtDescricaoTarefa?.text.toString()
+        val titulo: String = edtTituloTarefa?.text.toString()
+        val descricao: String = edtDescricaoTarefa?.text.toString()
 
         salvarTarefa(0, titulo, descricao)
     }
@@ -50,7 +50,7 @@ class CadastraTarefaActivity : AppCompatActivity() {
         tarefa = Tarefa(concluida, titulo, descricao)
         tarefaRepository?.save(tarefa!!)
 
-        NotificationUtils.notificationTarefa(this)
+        NotificationUtils.notificationTarefa(this, titulo, descricao)
 
         finish()
     }

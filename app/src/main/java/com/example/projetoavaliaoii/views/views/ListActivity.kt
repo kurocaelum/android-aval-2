@@ -6,16 +6,36 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.projetoavaliaoii.R
+import com.example.projetoavaliaoii.views.adapter.TarefaAdapter
+import com.example.projetoavaliaoii.views.model.Tarefa
+import kotlinx.android.synthetic.main.activity_list.*
 
 class ListActivity : AppCompatActivity() {
-
+//    private var tarefas = mutableListOf<Tarefa>()
+    private var tarefas = testeTarefas()
+    private var adapter = TarefaAdapter(tarefas)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
+        initRecyclerView()
+    }
 
+    fun initRecyclerView(){
+        rvTarefas.adapter = adapter
+        val layoutManager = GridLayoutManager(this, 1)
+        rvTarefas.layoutManager = layoutManager
+    }
+
+    fun testeTarefas(): List<Tarefa> {
+        return listOf(
+            Tarefa(0, "t1", "d1"),
+            Tarefa(0, "t2", "d2"),
+            Tarefa(0, "t3", "d3")
+        )
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -35,15 +35,15 @@ object NotificationUtils {
         notificationManager.createNotificationChannel(channel)
     }
 
-    fun notificationTarefa(context: Context){
+    fun notificationTarefa(context: Context, titulo: String, descricao: String){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
             createNotificationChannel(context)
 
         val notificationBuilder =
             NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_favorite)
-                .setContentTitle("Titulo") //TODO pegar do banco
-                .setContentText("Texto") //TODO pegar do banco
+                .setContentTitle(titulo) //TODO pegar do banco
+                .setContentText(descricao) //TODO pegar do banco
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setColor(ActivityCompat.getColor(context, R.color.colorAccent))
                 .setDefaults(Notification.DEFAULT_ALL)
